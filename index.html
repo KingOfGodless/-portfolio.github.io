@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karthick K | Portfolio</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <nav class="navbar container">
+            <a href="#home" class="nav-logo">Karthick K</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
+                <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <div class="hero-container container">
+                <div class="hero-img">
+                    <img src="Karthick_img.jpg" alt="Profile photo of Karthick K">
+                </div>
+                <div class="hero-content">
+                    <h1>Karthick K</h1>
+                    <p>Computer Science Engineering Diploma</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="container">
+             <h2 style="text-align: center;">About Me</h2>
+             <div class="about-content">
+                <p id="typewriter">Passionate and goal-oriented professional dedicated to continuous learning and personal growth. Committed to delivering impactful contributions that align with organizational goals. I thrive in dynamic environments that foster innovation and collaboration.</p>
+            </div>
+        </section>
+
+        <section id="skills" class="container">
+            <h2 style="text-align: center;">Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h4>Web Development</h4>
+                    <div class="skills-grid">
+                        <div class="skill-card">HTML</div>
+                        <div class="skill-card">CSS</div>
+                        <div class="skill-card">JavaScript</div>
+                        <div class="skill-card">MySQL</div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Programming</h4>
+                    <div class="skills-grid">
+                        <div class="skill-card">Python</div>
+                        <div class="skill-card">Java</div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Software & Tools</h4>
+                    <div class="skills-grid">
+                        <div class="skill-card">MS Office</div>
+                        <div class="skill-card">LibreOffice</div>
+                        <div class="skill-card">Photoshop</div>
+                        <div class="skill-card">Blender</div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Operating Systems</h4>
+                    <div class="skills-grid">
+                        <div class="skill-card">Windows</div>
+                        <div class="skill-card">Linux</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="container">
+            <h2 style="text-align: center;">Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>Operator</h3>
+                        <span class="date">2024 - 2025 | Nokia Solutions and Networks</span>
+                        <p>Oragadam, Kanchipuram, Tamil Nadu</p>
+                        <ul>
+                            <li>Operated Master Printing Machine (MPM).</li>
+                            <li>Managed product changeovers on MPM & NXT machines.</li>
+                            <li>Performed MPM wiper roll changes and program loading.</li>
+                            <li>Handled SPI program loading and reel splicing.</li>
+                            <li>Conducted VI tech visual inspection and manual inspection.</li>
+                            <li>Managed component reel handling, returning, and scrap control.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="education" class="container">
+            <h2 style="text-align: center;">Education</h2>
+             <div class="timeline">
+                <div class="timeline-item left">
+                     <div class="timeline-content">
+                        <h3>Diploma in Computer Science Engineering</h3>
+                        <span class="date">2020 - 2023</span>
+                        <p>Government Polytechnic College, Vanavasi</p>
+                     </div>
+                </div>
+                 <div class="timeline-item right">
+                     <div class="timeline-content">
+                        <h3>High School</h3>
+                        <span class="date">2016 - 2020</span>
+                        <p>Government High School, Chinnasoragai, Mettur</p>
+                     </div>
+                 </div>
+            </div>
+        </section>
+
+        <section id="contact" class="container">
+            <h2>Get In Touch</h2>
+            <p>I'm open to new opportunities and collaborations.</p>
+            <div class="contact-info">
+                <span><a href="mailto:ksgkarthick@outlook.com">ksgkarthick@outlook.com</a></span>
+                <span><a href="tel:7667651431">7667651431</a></span>
+                <span>Salem, Tamil Nadu</span>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Karthick K. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            function onScroll() {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 60) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', onScroll);
+
+            const typewriterElement = document.getElementById('typewriter');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        typewriterElement.style.width = '0';
+                        typewriterElement.style.animation = 'none';
+                        void typewriterElement.offsetWidth;
+                        typewriterElement.style.animation = null;
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            if(typewriterElement) {
+                observer.observe(document.getElementById('about'));
+            }
+        });
+    </script>
+</body>
+</html>
